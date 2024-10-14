@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/bae-accordion.ts"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + Lit + TS</title>
-  <link rel="stylesheet" href="./src/index.css" />
-  <script type="module" src="/src/bae-accordion.ts"></script>
-</head>
-
-<body>
-  <bae-accordion title="Accordion Title"></bae-accordion>
-</body>
-
+  <body>
+    <bae-accordion title="Accordion Title" open>
+      this is the content slot
+    </bae-accordion>
+  </body>
 </html>
