@@ -4,6 +4,24 @@ import { when } from "lit/directives/when.js";
 
 @customElement("bae-accordion")
 export class BaeAccordion extends LitElement {
+  constructor() {
+    super();
+    // Attach event listeners on mount
+    this.addEventListener("click", () => {
+      console.log("Root clicked");
+    });
+  }
+
+  connectedCallback(): void {
+    super.connectedCallback();
+    window.addEventListener("click", this.handleWindowClick);
+  }
+
+  disconnectedCallback(): void {
+    super.disconnectedCallback();
+    window.removeEventListener("clickl", this.handleWindowClick);
+  }
+
   static override styles = css`
     :host {
       width: 100%;
@@ -47,6 +65,12 @@ export class BaeAccordion extends LitElement {
   toggleView(e: MouseEvent) {
     e.stopPropagation();
     this.open = !this.open;
+  }
+
+  handleWindowClick() {
+    if (this.open) {
+      this.open = false;
+    }
   }
 
   render() {
