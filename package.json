@@ -4,11 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "packageManager": "pnpm@9.12.1",
-  "scripts": {},
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev"
+  },
   "devDependencies": {
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "turbo": "2.0.9"
+    "turbo": "^2.1.3"
   }
 }

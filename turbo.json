@@ -10,7 +10,10 @@
       "dependsOn": ["^build"]
     },
     "dev": {
-      "dependsOn": ["^dev"]
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "cache": false,
+      "persistent": true
     }
   }
 }
