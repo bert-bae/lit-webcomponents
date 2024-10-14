@@ -1,19 +1,14 @@
 {
-  "name": "lit-webcomponents",
+  "name": "@bae",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+  "packageManager": "pnpm@9.12.1",
+  "scripts": {},
+  "devDependencies": {
+    "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@lit/react": "^1.0.6",
-    "lit": "^3.2.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.5.3",
-    "vite": "^5.4.8"
+    "turbo": "2.0.9"
   }
 }

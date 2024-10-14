@@ -1,4 +1,5 @@
 import { LitElement, css, html } from "lit";
+import { createComponent } from "@lit/react";
 import { customElement, property } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";
 
@@ -38,6 +39,9 @@ export class BaeAccordion extends LitElement {
       color: white;
       border-radius: 4px;
       padding: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     :host h3 {
@@ -78,10 +82,11 @@ export class BaeAccordion extends LitElement {
       <div class="accordion-paper">
         <div class="accordion-title" @click="${this.toggleView}">
           <h3>${this.title}</h3>
+          <slot name="icon"></slot>
         </div>
 
         <div class="accordion-content" data-open="${this.open}">
-          ${when(this.open, () => html`<slot></slot>`)}
+          ${when(this.open, () => html`<slot name="content"></slot>`)}
         </div>
       </div>
     `;
@@ -93,3 +98,5 @@ declare global {
     "bae-accordion": BaeAccordion;
   }
 }
+
+// export const BaeAccordionReact = createComponent;
