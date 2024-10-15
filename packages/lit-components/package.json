@@ -1,8 +1,10 @@
 {
-  "name": "lit-webcomponents",
+  "name": "@bae/lit-components",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
   "scripts": {
     "dev": "vite --port 5000",
     "build": "tsc && vite build",
@@ -10,7 +12,8 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.6",
-    "lit": "^3.2.0"
+    "lit": "^3.2.0",
+    "react": "^18.3.1"
   },
   "devDependencies": {
     "typescript": "^5.5.3",

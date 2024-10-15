@@ -1,5 +1,6 @@
+import React from "react";
 import { LitElement, css, html } from "lit";
-//import { createComponent } from "@lit/react";
+import { createComponent } from "@lit/react";
 import { customElement, property } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";
 
@@ -13,12 +14,12 @@ export class BaeAccordion extends LitElement {
     });
   }
 
-  connectedCallback(): void {
+  override connectedCallback(): void {
     super.connectedCallback();
     window.addEventListener("click", this.handleWindowClick);
   }
 
-  disconnectedCallback(): void {
+  override disconnectedCallback(): void {
     super.disconnectedCallback();
     window.removeEventListener("clickl", this.handleWindowClick);
   }
@@ -61,7 +62,7 @@ export class BaeAccordion extends LitElement {
   `;
 
   @property({ type: String })
-  title = "";
+  override title = "";
 
   @property({ type: Boolean })
   open = false;
@@ -77,7 +78,7 @@ export class BaeAccordion extends LitElement {
     }
   }
 
-  render() {
+  override render() {
     return html`
       <div class="accordion-paper">
         <div class="accordion-title" @click="${this.toggleView}">
@@ -99,4 +100,8 @@ declare global {
   }
 }
 
-// export const BaeAccordionReact = createComponent;
+export const BaeAccordionReact = createComponent({
+  tagName: "bae-accordion",
+  elementClass: BaeAccordion,
+  react: React,
+});
